@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .container {
-    width: 80%;
+    
     margin: 0 auto;
     padding: 50px;
     font-family: 'Times New Roman', Times, serif;
@@ -12,7 +12,7 @@
 }
 .header {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     background-color: #fdfdfd;
 }
 
@@ -24,11 +24,12 @@
 
 .header p {
     font-size: 1.2em;
+    margin-bottom: 50px;
     color: #000000;
 }
 
 
-.content {
+.content,.content2,.content3, .content4{
     display: flex;
     justify-content: space-between;
 }
@@ -46,23 +47,55 @@
     padding: 10px;
 }
 .left-column h2 {
-    background-color: #9b85fc ;
-    color: white;
+    background-color: white ;
+    color: white;  /* color de las bolitas */
     padding: 5px;
     margin-bottom: 30px;
     text-align:right;
+    
+    font-size: 1.5em;
     
 }
 .center-column h2 {
     background-color: #c999af;
     color: black;
     padding: 5px;
+    text-align: center;
+    font-size: 2em;
     
 }
 .right-column h2 {
-    background-color: #11520a; /* PINKY */
-    color: rgb(0, 0, 0);
+    background-color: white ;
+    color: white;  /* color de las bolitas */
     padding: 5px;
     text-align: left;
+    font-size: 1.5em;
     
+}
+.tooltip {
+    position: relative;  /* Necesario para posicionar el texto emergente */
+    cursor: pointer;    /* Muestra un cursor de tipo "apuntar" */
+    color: #000000;      /* Color de la palabra sobre la que se pasa el cursor */
+}
+
+.tooltip-text {
+    visibility: hidden;  /* Oculta el texto por defecto */
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro con algo de transparencia */
+    color: #fff;         /* Color del texto */
+    text-align: center;  /* Centra el texto */
+    border-radius: 5px;  /* Bordes redondeados */
+    padding: 1px;        /* Espaciado interno */
+    position: absolute;  /* Posición absoluta para colocar el texto emergente */
+    z-index: 1;          /* Asegura que el texto emergente quede sobre otros elementos */
+    width: 300px;        /* Ancho fijo del tooltip */
+    bottom: 100%;        /* Coloca el texto justo encima de la palabra */
+    left: 50%;           /* Centra el texto sobre la palabra */
+    margin-left: -100px; /* Ajusta para que el tooltip se centre correctamente */
+    opacity: 0;          /* Hace que el tooltip sea invisible al principio */
+    transition: opacity 0.3s ease; /* Transición suave para la aparición */
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible; /* Muestra el texto cuando el cursor está sobre la palabra */
+    opacity: 1;          /* Hace visible el texto */
 }
